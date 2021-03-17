@@ -1,0 +1,17 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY latch1 IS
+PORT (D: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			Clock: IN STD_LOGIC;
+			Q: OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+END latch1;
+ARCHITECTURE Behaviour OF latch1 IS
+BEGIN
+	PROCESS (Clock)
+	BEGIN	
+		IF Clock'EVENT AND Clock='1' THEN	
+			Q<=D;
+		END IF;
+	END PROCESS;
+END BEHAVIOUR;
